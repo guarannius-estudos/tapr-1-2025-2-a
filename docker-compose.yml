@@ -44,7 +44,7 @@ services:
       context: ./inventory-service
     container_name: inventory-service
     ports:
-      - "8085:8080"
+      - "8086:8080"
     volumes:
       - ./inventory-service:/app
       - ~/.m2:/root/.m2
@@ -58,7 +58,7 @@ services:
       context: ./sales-service
     container_name: sales-service
     ports:
-      - "8086:8080"
+      - "8087:8080"
     volumes:
       - ./sales-service:/app
       - ~/.m2:/root/.m2
