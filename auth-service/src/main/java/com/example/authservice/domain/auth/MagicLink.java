@@ -30,7 +30,7 @@ public class MagicLink {
     @Embedded
     private ExpiresAt expiresAt;
 
-    @Column
+    @Column(columnDefinition = "DATETIME")
     private Instant consumedAt;
 
     public MagicLink(UUID userId, HashedToken hashedToken, ExpiresAt expiresAt) {

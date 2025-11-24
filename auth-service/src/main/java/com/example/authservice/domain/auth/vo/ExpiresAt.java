@@ -11,7 +11,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @Getter
 public class ExpiresAt {
-    @Column(name = "expires_at", nullable = false)
+    @Column(name = "expires_at", nullable = false, columnDefinition = "DATETIME")
     private Instant value;
 
     public ExpiresAt(Instant value) {
