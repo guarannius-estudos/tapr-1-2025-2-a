@@ -1,5 +1,6 @@
 package com.example.inventory.interfaces.rest;
 
+import com.example.inventory.application.stock.GetStockByIdHandler;
 import com.example.inventory.application.stock.ListStockHandler;
 import com.example.inventory.application.stock.UpdateStockHandler;
 import com.example.inventory.interfaces.rest.dto.stock.StockResponse;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/stock")
 @RequiredArgsConstructor
 public class StockController {
+    private final GetStockByIdHandler getStockByIdHandler;
     private final ListStockHandler listStockHandler;
     private final UpdateStockHandler updateStockHandler;
 
@@ -21,6 +23,12 @@ public class StockController {
     public ResponseEntity<Page<StockResponse>> list(Pageable pageable) {
         Page<StockResponse> page = listStockHandler.handle(pageable);
         return ResponseEntity.ok(page);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<StockResponse> getById(@PathVariable("id") Long id) {
+        StockResponse stock = getStockByIdHandler.handle(id);
+        return ResponseEntity.ok(stock);
     }
 
     @PutMapping("/{id}")
