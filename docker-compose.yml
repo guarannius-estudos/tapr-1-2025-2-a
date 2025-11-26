@@ -50,7 +50,7 @@ services:
     depends_on:
       - service-discovery
       - auth-service
-      - inventory-service
+      - sales-service
     networks:
       - app-network
   inventory-service:
