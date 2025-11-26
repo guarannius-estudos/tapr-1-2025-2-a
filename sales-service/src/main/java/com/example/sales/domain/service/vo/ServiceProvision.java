@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @Embeddable
 @NoArgsConstructor
 @Getter
-public class Service {
+public class ServiceProvision {
     @Enumerated(EnumType.STRING)
     @Column(name = "service", nullable = false, length = 20)
     private ServiceType value;
 
-    private Service(ServiceType value) {
+    private ServiceProvision(ServiceType value) {
         if (value == null) {
             throw new IllegalArgumentException("Serviço obrigatório.");
         }
@@ -23,7 +23,7 @@ public class Service {
         this.value = value;
     }
 
-    public static Service of(ServiceType value) {
-        return new Service(value);
+    public static ServiceProvision of(ServiceType value) {
+        return new ServiceProvision(value);
     }
 }

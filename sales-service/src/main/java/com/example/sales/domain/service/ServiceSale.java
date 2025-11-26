@@ -1,7 +1,6 @@
 package com.example.sales.domain.service;
 
-import com.example.sales.domain.item.ItemSale;
-import com.example.sales.domain.service.vo.Service;
+import com.example.sales.domain.service.vo.ServiceProvision;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +17,8 @@ public class ServiceSale {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Service service;
+    @Embedded
+    private ServiceProvision serviceProvision;
 
     @Column(nullable = false)
     private double price;

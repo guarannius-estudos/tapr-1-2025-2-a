@@ -16,7 +16,7 @@ public class GetServiceSaleByIdHandler {
 
         return new ServiceSaleResponse(
                 serviceSale.getId(),
-                serviceSale.getService().toString(),
+                serviceSale.getServiceProvision().toString(),
                 serviceSale.getPrice()
         );
     }

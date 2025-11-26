@@ -2,6 +2,7 @@ package com.example.sales.application.service;
 
 import com.example.sales.domain.service.ServiceSale;
 import com.example.sales.domain.service.ServiceSaleRepository;
+import com.example.sales.domain.service.vo.ServiceProvision;
 import com.example.sales.interfaces.rest.dto.service.RegisterServiceSaleRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class RegisterServiceSaleHandler {
     @Transactional
     public ServiceSale handle(RegisterServiceSaleRequest request) {
         ServiceSale serviceSale = new ServiceSale();
-        serviceSale.setService(request.service());
+        serviceSale.setServiceProvision(ServiceProvision.of(request.service()));
         serviceSale.setPrice(request.price());
 
         return serviceSaleRepository.save(serviceSale);
