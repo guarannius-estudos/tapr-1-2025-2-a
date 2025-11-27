@@ -4,7 +4,6 @@ public record InvoiceResponse(
         Long id,
         int document,
         String serie,
-        double productsValue,
         double totalValue
 ) {
 

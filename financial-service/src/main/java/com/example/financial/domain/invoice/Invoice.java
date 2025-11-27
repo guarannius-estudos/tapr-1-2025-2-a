@@ -23,8 +23,5 @@ public class Invoice {
     private String serie;
 
     @Column(nullable = false)
-    private double productsValue;
-
-    @Column(nullable = false)
     private double totalValue;
 }

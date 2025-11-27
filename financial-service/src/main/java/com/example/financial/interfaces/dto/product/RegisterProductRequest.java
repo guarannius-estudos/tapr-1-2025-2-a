@@ -1,11 +1,10 @@
 package com.example.financial.interfaces.dto.product;
 
-import com.example.financial.domain.invoice.Invoice;
-import com.example.financial.domain.product.vo.Category;
+import com.example.financial.domain.product.vo.CategoryType;
 
 public record RegisterProductRequest(
-        Invoice invoiceId,
-        Category category,
+        Long invoiceId,
+        CategoryType category,
         Long saleId
 ) {
 

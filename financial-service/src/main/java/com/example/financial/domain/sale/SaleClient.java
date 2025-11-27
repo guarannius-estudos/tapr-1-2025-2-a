@@ -25,12 +25,12 @@ public class SaleClient {
         }
     }
 
-    public ServiceSaleResponse getServiceSaleById(Long itemId) {
+    public ServiceSaleResponse getServiceSaleById(Long serviceId) {
         try {
-            String url = SALES_SERVICE_URL + "/services/" + itemId;
+            String url = SALES_SERVICE_URL + "/services/" + serviceId;
             return restTemplate.getForObject(url, ServiceSaleResponse.class);
         } catch (HttpClientErrorException.NotFound e) {
-            throw new RuntimeException("Venda de serviço não encontrada: " + itemId + ".");
+            throw new RuntimeException("Venda de serviço não encontrada: " + serviceId + ".");
         } catch (Exception e) {
             throw new RuntimeException("Erro ao comunicar com o serviço de vendas: " + e.getMessage(), e);
         }
