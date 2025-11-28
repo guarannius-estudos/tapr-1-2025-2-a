@@ -31,7 +31,7 @@ public class RegisterItemHandler {
                 savedItem.getId(),
                 savedItem.getName(),
                 savedItem.getDescription(),
-                savedItem.getCategory().toString(),
+                savedItem.getCategory().getValue().toString(),
                 savedItem.getBrand(),
                 savedItem.getPrice()
         );
